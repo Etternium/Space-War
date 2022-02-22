@@ -4,3 +4,4 @@ https://sketchfab.com/3d-models/isu-70-3e861556f3674efc802d6cd4ee2e6feb
 https://sketchfab.com/3d-models/pirate-hunter-d8c7df95b9614390bc4d907172cd3e9d
 https://sketchfab.com/3d-models/procedural-spaceship-eb8377b30bfd419583d935e6a7dba45a
 https://sketchfab.com/3d-models/mothership-896f36009f2d41878d01a855ae09eb12
+https://assetstore.unity.com/packages/2d/textures-materials/sky/free-skyboxes-space-178953

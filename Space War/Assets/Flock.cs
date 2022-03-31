@@ -4,13 +4,20 @@ using UnityEngine;
 
 public class Flock : MonoBehaviour
 {
+    [Header("Spawning")]
+    public Vector3 size;
+    public float delay = 0.25f;
+    int i = 0;
+
+    [Space]
+    public bool active = false;
     public FlockAgent agentPrefab;
     List<FlockAgent> agents = new List<FlockAgent>();
     public FlockBehaviour behaviour;
 
     [Range(10, 500)]
     public int startingCount = 250;
-    const float agentDensity = 0.2f;    //how close agents spawn to each other
+    const float agentDensity = 0.5f;    //how close agents spawn to each other
 
     [Range(1f, 100f)]
     public float driveFactor = 10f;
@@ -33,43 +40,54 @@ public class Flock : MonoBehaviour
         squareNeighbourRadius = neighbourRadius * neighbourRadius;
         squareAvoidanceRadius = squareNeighbourRadius * avoidanceRadiusMultiplier * avoidanceRadiusMultiplier;
 
-        for (int i = 0; i < startingCount; i++)
-        {
-            float x = Random.Range(0f, 360f);
-            float y = Random.Range(0f, 360f);
-            float z = Random.Range(0f, 360f);
-
-            Vector3 pos = Random.insideUnitSphere * startingCount * agentDensity;
-
-            Vector3 rotation = new Vector3(x, y, z);
-            Quaternion rot = Quaternion.Euler(rotation);
-
-            FlockAgent newAgent = Instantiate(agentPrefab, pos, rot, transform);
-            newAgent.name = "Agent " + i;
-            newAgent.Initialise(this);
-            agents.Add(newAgent);
-        }
+        if (i < startingCount)
+            InvokeRepeating("Spawn", 0f, delay);
     }
 
     void Update()
     {
-        foreach(FlockAgent agent in agents)
-        {
-            if(agent != null)
+        if (i >= startingCount)
+            CancelInvoke("Spawn");
+
+        if(active)
+        { 
+            foreach(FlockAgent agent in agents)
             {
-                List<Transform> context = GetNearbyObjects(agent);
-                Vector3 move = behaviour.CalculateMove(agent, context, this);
-
-                move *= driveFactor;
-
-                if(move.sqrMagnitude > squareMaxSpeed)
+                if(agent != null)
                 {
-                    move = move.normalized * maxSpeed;      //keep it at maxSpeed
-                }
+                    List<Transform> context = GetNearbyObjects(agent);
+                    Vector3 move = behaviour.CalculateMove(agent, context, this);
 
-                agent.Move(move);
+                    move *= driveFactor;
+
+                    if(move.sqrMagnitude > squareMaxSpeed)
+                    {
+                        move = move.normalized * maxSpeed;      //keep it at maxSpeed
+                    }
+
+                    agent.Move(move);
+                }
             }
         }
+    }
+
+    void Spawn()
+    {
+        float x = Random.Range(-size.x / 2, size.x / 2);
+        float y = Random.Range(-size.y / 2, size.y / 2);
+        float z = Random.Range(0f, 360f);
+
+        //Vector3 pos = Random.insideUnitSphere * startingCount * agentDensity;
+        Vector3 pos = transform.position + new Vector3(x, y, 0f);
+
+        /*Vector3 rotation = new Vector3(x, y, z);
+        Quaternion rot = Quaternion.Euler(rotation);*/
+
+        FlockAgent newAgent = Instantiate(agentPrefab, pos, transform.rotation, transform);
+        newAgent.name = "Agent " + i;
+        newAgent.Initialise(this);
+        agents.Add(newAgent);
+        i++;
     }
 
     List<Transform> GetNearbyObjects(FlockAgent agent)
@@ -86,5 +104,11 @@ public class Flock : MonoBehaviour
         }
 
         return context;
+    }
+
+    private void OnDrawGizmosSelected()
+    {
+        Gizmos.color = Color.blue;
+        Gizmos.DrawCube(transform.position, size);
     }
 }

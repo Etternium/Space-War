@@ -15,9 +15,11 @@ public class FlockAgent : MonoBehaviour
     GameObject[] agents;
 
     Flock agentFlock;
+
     public Flock AgentFlock { get { return agentFlock; } }
 
     Collider agentCollider;
+
     public Collider AgentCollider { get { return agentCollider; } }
 
     void Start()
@@ -29,7 +31,18 @@ public class FlockAgent : MonoBehaviour
     void Update()
     {
         FindEnemy();
-        Shoot(damage);
+
+        if(agentFlock.active)
+        {
+
+            //Shoot(damage);
+        }
+
+        if (!agentFlock.active)
+        {
+            transform.position += transform.forward * Time.deltaTime * 50f;
+
+        }
 
         if (health <= 0)
             Die();

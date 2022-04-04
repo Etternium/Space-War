@@ -6,6 +6,8 @@ TagManager:
   tags:
   - NE
   - R
+  - Cam
+  - Manager
   layers:
   - Default
   - TransparentFX
@@ -14,8 +16,8 @@ TagManager:
   - Water
   - UI
   - Obstacle
-  - 
-  - 
+  - Rebel
+  - New East
   - 
   - 
   - 

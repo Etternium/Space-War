@@ -106,9 +106,9 @@ public class Flock : MonoBehaviour
         return context;
     }
 
-    private void OnDrawGizmosSelected()
+    private void OnDrawGizmos()
     {
-        Gizmos.color = Color.blue;
+        Gizmos.color = Color.green;
         Gizmos.DrawCube(transform.position, size);
     }
 }

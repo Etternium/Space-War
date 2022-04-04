@@ -4862,6 +4862,68 @@ ParticleSystemRenderer:
   m_Mesh2: {fileID: 0}
   m_Mesh3: {fileID: 0}
   m_MaskInteraction: 0
+--- !u!1001 &6879926420721432600
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 265556328429270078}
+    m_Modifications:
+    - target: {fileID: 2725222642725543669, guid: 98a3e4a5c44827d4bbf0df875989d418, type: 3}
+      propertyPath: m_Name
+      value: New East POV
+      objectReference: {fileID: 0}
+    - target: {fileID: 6430019594511107076, guid: 98a3e4a5c44827d4bbf0df875989d418, type: 3}
+      propertyPath: m_RootOrder
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6430019594511107076, guid: 98a3e4a5c44827d4bbf0df875989d418, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6430019594511107076, guid: 98a3e4a5c44827d4bbf0df875989d418, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6430019594511107076, guid: 98a3e4a5c44827d4bbf0df875989d418, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 1.22
+      objectReference: {fileID: 0}
+    - target: {fileID: 6430019594511107076, guid: 98a3e4a5c44827d4bbf0df875989d418, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.965926
+      objectReference: {fileID: 0}
+    - target: {fileID: 6430019594511107076, guid: 98a3e4a5c44827d4bbf0df875989d418, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.2588186
+      objectReference: {fileID: 0}
+    - target: {fileID: 6430019594511107076, guid: 98a3e4a5c44827d4bbf0df875989d418, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6430019594511107076, guid: 98a3e4a5c44827d4bbf0df875989d418, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6430019594511107076, guid: 98a3e4a5c44827d4bbf0df875989d418, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: -30
+      objectReference: {fileID: 0}
+    - target: {fileID: 6430019594511107076, guid: 98a3e4a5c44827d4bbf0df875989d418, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6430019594511107076, guid: 98a3e4a5c44827d4bbf0df875989d418, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 98a3e4a5c44827d4bbf0df875989d418, type: 3}
+--- !u!20 &1223394756799449520 stripped
+Camera:
+  m_CorrespondingSourceObject: {fileID: 5728639939918672296, guid: 98a3e4a5c44827d4bbf0df875989d418, type: 3}
+  m_PrefabInstance: {fileID: 6879926420721432600}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &8404409582910787595
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4922,6 +4984,10 @@ PrefabInstance:
       value: ISU-70 Flock Agent
       objectReference: {fileID: 0}
     - target: {fileID: 8955081591787044495, guid: ca0e40230c9cd6243a8a52832bd22464, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 8955081591787044495, guid: ca0e40230c9cd6243a8a52832bd22464, type: 3}
       propertyPath: m_TagString
       value: NE
       objectReference: {fileID: 0}
@@ -4965,9 +5031,15 @@ MonoBehaviour:
   health: 25
   damage: 5
   shootCooldown: 1
+  radius: 100
+  enemyMask:
+    serializedVersion: 2
+    m_Bits: 128
+  showGizmos: 0
   explosion: {fileID: 6939944457640349619, guid: 59c5f63a987401048a2f25394ae58efa, type: 3}
   blaster1: {fileID: 7925090609030059945}
   blaster2: {fileID: 3782741927516424955}
+  cam: {fileID: 1223394756799449520}
 --- !u!1001 &8473173760732913575
 PrefabInstance:
   m_ObjectHideFlags: 0

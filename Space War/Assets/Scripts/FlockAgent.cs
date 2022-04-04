@@ -6,8 +6,11 @@ using UnityEngine;
 public class FlockAgent : MonoBehaviour
 {
     public int health = 25, damage = 5;
-    public float shootCooldown = 1f;
+    public float shootCooldown = 1f, radius = 200f;
+    public LayerMask enemyMask;
     float startShootCooldown;
+    bool inRadius;
+    public bool showGizmos;
 
     public ParticleSystem explosion, blaster1, blaster2;
 
@@ -15,6 +18,8 @@ public class FlockAgent : MonoBehaviour
     GameObject[] agents;
 
     Flock agentFlock;
+    public Camera cam;
+    CameraSwitch camSwitch;
 
     public Flock AgentFlock { get { return agentFlock; } }
 
@@ -22,26 +27,35 @@ public class FlockAgent : MonoBehaviour
 
     public Collider AgentCollider { get { return agentCollider; } }
 
+    private void Awake()
+    {
+        camSwitch = GameObject.FindGameObjectWithTag("Manager").GetComponent<CameraSwitch>();
+    }
+
     void Start()
     {
         agentCollider = GetComponent<Collider>();
+
+        camSwitch.camsList.Add(cam);
         startShootCooldown = shootCooldown;
     }
 
     void Update()
     {
         FindEnemy();
+        inRadius = Physics.CheckSphere(transform.position, radius, enemyMask);
 
         if(agentFlock.active)
         {
-
-            //Shoot(damage);
+            if(inRadius)
+            {
+                Shoot(damage);
+            }
         }
 
         if (!agentFlock.active)
         {
             transform.position += transform.forward * Time.deltaTime * 50f;
-
         }
 
         if (health <= 0)
@@ -107,5 +121,14 @@ public class FlockAgent : MonoBehaviour
     {
         Instantiate(explosion, transform.position, Quaternion.identity);
         Destroy(gameObject);
+    }
+
+    private void OnDrawGizmos()
+    {
+        if(showGizmos)
+        {
+            Gizmos.color = Color.cyan;
+            Gizmos.DrawWireSphere(transform.position, radius);
+        }
     }
 }

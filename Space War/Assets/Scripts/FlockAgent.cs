@@ -123,6 +123,17 @@ public class FlockAgent : MonoBehaviour
         Destroy(gameObject);
     }
 
+    private void OnDestroy()
+    {
+        camSwitch.camsList.Remove(cam);
+
+        if(cam.isActiveAndEnabled)
+        {
+            Debug.Log("a haa");
+            camSwitch.ChangeCamera();
+        }
+    }
+
     private void OnDrawGizmos()
     {
         if(showGizmos)

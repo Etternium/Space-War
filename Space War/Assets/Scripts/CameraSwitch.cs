@@ -11,11 +11,11 @@ public class CameraSwitch : MonoBehaviour
     public List<Camera> camsList = new List<Camera>();
 
     Camera[] camsArray;
-    Camera current;
+    Camera current, cam;
 
     void Start()
     {
-        timer = startTimer;
+        timer = 0;
         ChangeCamera();
     }
 
@@ -27,21 +27,20 @@ public class CameraSwitch : MonoBehaviour
 
         if (timer <= 0)
         {
-            current = camsArray[rnd];
             ChangeCamera();
         }
 
-        if(current = null)
-        {
+        if (cam = null)
             ChangeCamera();
-        }
     }
 
     public void ChangeCamera()
     {
         rnd = Random.Range(0, camsArray.Length);
 
-        current.gameObject.SetActive(false);
+        if (current != null)
+            current.gameObject.SetActive(false);
+
         camsArray[rnd].gameObject.SetActive(true);
 
         timer = startTimer;

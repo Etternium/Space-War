@@ -62,7 +62,7 @@ Something
 | SameFlockFilter | Modified from [here](https://www.youtube.com/watch?v=mjKINQigAE4&list=PL5KbKbJ6Gf99UlyIqzV1UpOzseyRn5H1d) |
 
 # Storyboard
-https://github.com/Etternium/Space-War/blob/main/Storyboard%20Scenes.png
+![ald text](https://github.com/Etternium/Space-War/blob/main/Storyboard%20Scenes.png?raw=true)
 
 # Resources
 - [Skybox](https://assetstore.unity.com/packages/2d/textures-materials/sky/free-skyboxes-space-178953)

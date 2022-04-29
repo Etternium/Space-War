@@ -9,13 +9,12 @@
 Video Demo:
 [insert video link here]
 
-Scene and story inspiration
-(https://www.youtube.com/watch?v=-u4AwQGLEsE)
+[Scene and story inspiration](https://www.youtube.com/watch?v=-u4AwQGLEsE)
 
 # Most proud of
 Something
 
-#Events Summary
+# Events Summary
 1. Camera moves sideways to show the Rebel capital ship
 2. Camera moves sideways to show the New East capital ship
 3. Both capital ships are shown from aerial perspective
@@ -43,7 +42,7 @@ Something
 - Press R to reload the scene
 
 # Classes
-| Class | How it was written |
+| Class.cs | How it was written |
 | --- | --- |
 | CameraSwitch | Written myself |
 | ContextFilter | Modified from [here](https://www.youtube.com/watch?v=mjKINQigAE4&list=PL5KbKbJ6Gf99UlyIqzV1UpOzseyRn5H1d) |
@@ -63,7 +62,7 @@ Something
 | SameFlockFilter | Modified from [here](https://www.youtube.com/watch?v=mjKINQigAE4&list=PL5KbKbJ6Gf99UlyIqzV1UpOzseyRn5H1d) |
 
 # Storyboard
-/assets/images/Storyboard Scenes.png
+/assets/images/Storyboard%20Scenes.png
 
 # Resources
 - [Skybox](https://assetstore.unity.com/packages/2d/textures-materials/sky/free-skyboxes-space-178953)

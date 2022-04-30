@@ -6,8 +6,7 @@
 - A fanmade imaginary creation of a space battle inspired by Starset lore. The ships are autonomous agents and the scene runs completely by itself. The ending of the battle is always random as all ships operate autonomously.
 
 # Videos
-Video Demo:
-[insert video link here]
+[Video Demo](https://youtu.be/Vc-UV4XH_X4)
 
 [Scene and story inspiration](https://www.youtube.com/watch?v=-u4AwQGLEsE)
 

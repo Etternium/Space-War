@@ -3,7 +3,7 @@
 - Luka Mumelas
 - C19331903
 - TU984 / DT508
-- A fanmade imaginary creation of a sapce battle inspired by Starset lore. The ships are autonomous agents and the scene runs completely by itself. The ending of the battle is always random as all ships operate autonomously.
+- A fanmade imaginary creation of a space battle inspired by Starset lore. The ships are autonomous agents and the scene runs completely by itself. The ending of the battle is always random as all ships operate autonomously.
 
 # Videos
 Video Demo:
@@ -12,7 +12,7 @@ Video Demo:
 [Scene and story inspiration](https://www.youtube.com/watch?v=-u4AwQGLEsE)
 
 # Most proud of
-Something
+I'm very proud of explosion particles and the cutscenes since it adds so much more juice to the project
 
 # Events Summary
 1. Camera moves sideways to show the Rebel capital ship
@@ -26,19 +26,41 @@ Something
 
 # How it works
 ## Sequence
-- sad
-- sad
+- There is a timeline game object that acts like a game manager. It plays the intro cutscene which was made using Unity's in built timeline feature
+- The timeline feature animates different camera viewpoints and activates both New East and Rebel Flocks at certain times within the timeline
+- Timeline game object also has a Camera Switch component that stores all fighter POV cameras in an array that randomly turns on a different POV at set interval
 
 ## AI
+- **Flock**:
+  - Spawns fighter prefabs with delay based on "starting count" variable
+  - Holds a public composite behaviour variable that determines what behaviours fighters have
+  - Finds all nearby objects for each fighter
+  - Controls weight variables such as drive factor, maximum speed, neighbour radius and avoidance radius multiplier
+- **Flock Agent**:
+  - Holds health and damage variables
+  - Checks if an enemy is within range and shoots it at set intervals
+  - Continously moves the fighter with respect to behaviours attached to it
+- **Same Flock Filter**: Finds fighters of same tag so that they don't group with opposing fighters
+- **Physics Layer Filter**: Makes a list of game objects with a specific layer mask for fighters to avoid
 
 ## Behaviours
-
-## Weapons
+- **Alignment**: 
+- **Avoidance**:
+- **Cohesion**: Finds fighters of same tag so that they don't group with opposing boids
+- **Avoid Obstacle**:
+- **Stay In Radius**:
+- **Steered Cohesion**:
 
 ## Design
+- Particle systems
+  - Explosion plays when a fighter is destroyed. Explosions also play when a capital ship is destroyed - these explosions are random in scale and are spawned randomly inside predetermined square
+  - Blaster effect plays when the fighter attacks
+
+- Skybox uses space textures
 
 # How to use
-- Open the project and play the scene or run the exe build
+- Open the project and play the scene
+- New East Flock and Rebel Flock game objects have some public sliders that affect certain aspects, most notably how many fighters will spawn form each flock
 - Press R to reload the scene
 
 # Classes

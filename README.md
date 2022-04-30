@@ -38,8 +38,8 @@ I'm very proud of explosion particles and the cutscenes since it adds so much mo
   - Controls weight variables such as drive factor, maximum speed, neighbour radius and avoidance radius multiplier
 - ***Flock Agent***:
   - Holds health and damage variables
-  - Finds anc checks if an enemy is within range and shoots it at set intervals
-  - Continously moves the fighter with respect to behaviours attached to it
+  - Finds and checks if an enemy is within range and shoots it at set intervals
+  - Continuously moves the fighter with respect to behaviours attached to it
 - ***Same Flock Filter***: Finds fighters of same tag so that they don't group with opposing fighters
 - ***Physics Layer Filter***: Makes a list of game objects with a specific layer mask for fighters to avoid
 
@@ -72,8 +72,8 @@ I'm very proud of explosion particles and the cutscenes since it adds so much mo
 | FilteredFlock | Modified from [here](https://www.youtube.com/watch?v=mjKINQigAE4&list=PL5KbKbJ6Gf99UlyIqzV1UpOzseyRn5H1d) |
 | Flock | Modified from [here](https://www.youtube.com/watch?v=mjKINQigAE4&list=PL5KbKbJ6Gf99UlyIqzV1UpOzseyRn5H1d) |
 | FlockAgent | Modified from [here](https://www.youtube.com/watch?v=mjKINQigAE4&list=PL5KbKbJ6Gf99UlyIqzV1UpOzseyRn5H1d) |
-| FlockBehvaiour | Modified from [here](https://www.youtube.com/watch?v=mjKINQigAE4&list=PL5KbKbJ6Gf99UlyIqzV1UpOzseyRn5H1d) |
-| AlignmentBehvaiour | Modified from [here](https://www.youtube.com/watch?v=mjKINQigAE4&list=PL5KbKbJ6Gf99UlyIqzV1UpOzseyRn5H1d) |
+| FlockBehaviour | Modified from [here](https://www.youtube.com/watch?v=mjKINQigAE4&list=PL5KbKbJ6Gf99UlyIqzV1UpOzseyRn5H1d) |
+| AlignmentBehaviour | Modified from [here](https://www.youtube.com/watch?v=mjKINQigAE4&list=PL5KbKbJ6Gf99UlyIqzV1UpOzseyRn5H1d) |
 | AvoidanceBehaviour | Modified from [here](https://www.youtube.com/watch?v=mjKINQigAE4&list=PL5KbKbJ6Gf99UlyIqzV1UpOzseyRn5H1d) |
 | CohesionBehaviour | Modified from [here](https://www.youtube.com/watch?v=mjKINQigAE4&list=PL5KbKbJ6Gf99UlyIqzV1UpOzseyRn5H1d) |
 | CompositeBehaviour | Modified from [here](https://www.youtube.com/watch?v=mjKINQigAE4&list=PL5KbKbJ6Gf99UlyIqzV1UpOzseyRn5H1d) |

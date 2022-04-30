@@ -31,25 +31,25 @@ I'm very proud of explosion particles and the cutscenes since it adds so much mo
 - Timeline game object also has a Camera Switch component that stores all fighter POV cameras in an array that randomly turns on a different POV at set interval
 
 ## AI
-- **Flock**:
+- ***Flock***:
   - Spawns fighter prefabs with delay based on "starting count" variable
   - Holds a public composite behaviour variable that determines what behaviours fighters have
   - Finds all nearby objects for each fighter
   - Controls weight variables such as drive factor, maximum speed, neighbour radius and avoidance radius multiplier
-- **Flock Agent**:
+- ***Flock Agent***:
   - Holds health and damage variables
-  - Checks if an enemy is within range and shoots it at set intervals
+  - Finds anc checks if an enemy is within range and shoots it at set intervals
   - Continously moves the fighter with respect to behaviours attached to it
-- **Same Flock Filter**: Finds fighters of same tag so that they don't group with opposing fighters
-- **Physics Layer Filter**: Makes a list of game objects with a specific layer mask for fighters to avoid
+- ***Same Flock Filter***: Finds fighters of same tag so that they don't group with opposing fighters
+- ***Physics Layer Filter***: Makes a list of game objects with a specific layer mask for fighters to avoid
 
 ## Behaviours
-- **Alignment**: 
-- **Avoidance**:
-- **Cohesion**: Finds fighters of same tag so that they don't group with opposing boids
-- **Avoid Obstacle**:
-- **Stay In Radius**:
-- **Steered Cohesion**:
+- ***Alignment***: Adds all points together, averages and places the fighter into a flock if there are other fighters nearby
+- ***Avoidance***: Avoids game objects that are too close to the fighter
+- ***Cohesion***: Adds all points together, averages and creates offset from fighter position
+- ***Avoid Obstacle***: Avoids game objects with a specific layer mask
+- ***Stay In Radius***: Keeps the fighter inside a set radius so it doesn't drift off
+- ***Steered Cohesion***: Adds all points together, averages and creates offset from fighter position with smooth dampening
 
 ## Design
 - Particle systems
